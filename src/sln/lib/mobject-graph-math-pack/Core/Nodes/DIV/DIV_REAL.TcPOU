@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="DIV_REAL" Id="{c991f924-32b6-46b9-84cf-a651b314e60f}" SpecialFunc="None">
+    <Declaration><![CDATA[{attribute 'linkalways'} 
+{attribute 'no_explicit_call' := 'This FB is a CLASS and must be accessed using methods or properties'}
+{attribute 'enable_dynamic_creation'}
+FUNCTION_BLOCK FINAL DIV_REAL EXTENDS Node
+VAR
+	in1 : _REAL(0.0);
+	in2 : _REAL(0.0);
+	out : _REAL(0.0);
+	div0 : _BOOL(FALSE);
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Folder Name="Constructor" Id="{bf2d3335-feba-4d6b-8c36-eaca5d2fceab}" />
+    <Method Name="Clone" Id="{745666a5-0e26-4b27-b549-2269c9db6b39}">
+      <Declaration><![CDATA[METHOD PUBLIC Clone : I_Node
+VAR
+	pNode : POINTER TO DIV_REAL;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[pNode := __NEW(DIV_REAL);
+Clone := pNode^;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="FB_init" Id="{ef50a78c-d4c4-400c-929d-4130f95bade5}" FolderPath="Constructor\">
+      <Declaration><![CDATA[METHOD FB_init : BOOL
+VAR_INPUT
+	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[AddInput('in1',THIS^.in1);
+AddInput('in2',THIS^.in2);
+AddOutput('out', THIS^.out);
+AddOutput('div0', THIS^.div0);]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="OnExecute" Id="{5adc588a-0afc-45d8-ac72-b747ae45024d}">
+      <Declaration><![CDATA[METHOD PROTECTED OnExecute
+VAR
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF in2.Value = 0 THEN
+	div0.Value := TRUE;
+	RETURN;
+END_IF
+
+out.Value := in1.Value / in2.Value;
+div0.Value := FALSE;]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

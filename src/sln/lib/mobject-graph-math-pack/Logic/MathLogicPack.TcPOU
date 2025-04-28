@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+	<POU Name="MathLogicPack" Id="{d765b6fe-2a74-4ad5-9983-aa9f32608f67}" SpecialFunc="None">
+		<Declaration><![CDATA[{attribute 'linkalways'} 
+{attribute 'no_explicit_call' := 'This FB is a CLASS and must be accessed using methods or properties'}
+{attribute 'enable_dynamic_creation'}
+FUNCTION_BLOCK MathLogicPack IMPLEMENTS I_GraphPack
+VAR
+	AND_BOOL : AND_BOOL;
+	AND_BYTE : AND_BYTE;
+	AND_DINT : AND_DINT;
+	AND_DWORD : AND_DWORD;
+	AND_INT : AND_INT;
+	AND_LINT : AND_LINT;
+	AND_LWORD : AND_LWORD;
+	AND_SINT : AND_SINT;
+	AND_UDINT : AND_UDINT;
+	AND_UINT : AND_UINT;
+	AND_ULINT : AND_ULINT;
+	AND_USINT : AND_USINT;
+	AND_WORD : AND_WORD;
+	
+	OR_BOOL : OR_BOOL;
+	OR_BYTE : OR_BYTE;
+	OR_DINT : OR_DINT;
+	OR_DWORD : OR_DWORD;
+	OR_INT : OR_INT;
+	OR_LINT : OR_LINT;
+	OR_LWORD : OR_LWORD;
+	OR_SINT : OR_SINT;
+	OR_UDINT : OR_UDINT;
+	OR_UINT : OR_UINT;
+	OR_ULINT : OR_ULINT;
+	OR_USINT : OR_USINT;
+	OR_WORD : OR_WORD;
+	
+	XOR_BOOL : XOR_BOOL;
+	XOR_BYTE : XOR_BYTE;
+	XOR_DINT : XOR_DINT;
+	XOR_DWORD : XOR_DWORD;
+	XOR_INT : XOR_INT;
+	XOR_LINT : XOR_LINT;
+	XOR_LWORD : XOR_LWORD;
+	XOR_SINT : XOR_SINT;
+	XOR_UDINT : XOR_UDINT;
+	XOR_UINT : XOR_UINT;
+	XOR_ULINT : XOR_ULINT;
+	XOR_USINT : XOR_USINT;
+	XOR_WORD : XOR_WORD;
+	
+	NOT_BOOL : NOT_BOOL;
+	NOT_BYTE : NOT_BYTE;
+	NOT_DINT : NOT_DINT;
+	NOT_DWORD : NOT_DWORD;
+	NOT_INT : NOT_INT;
+	NOT_LINT : NOT_LINT;
+	NOT_LWORD : NOT_LWORD;
+	NOT_SINT : NOT_SINT;
+	NOT_UDINT : NOT_UDINT;
+	NOT_UINT : NOT_UINT;
+	NOT_ULINT : NOT_ULINT;
+	NOT_USINT : NOT_USINT;
+	NOT_WORD : NOT_WORD;
+END_VAR
+]]></Declaration>
+		<Implementation>
+			<ST><![CDATA[]]></ST>
+		</Implementation>
+		<Method Name="Register" Id="{3d299fe8-cc09-49fa-8301-e94be7de1cbf}">
+			<Declaration><![CDATA[METHOD Register
+VAR_INPUT
+	Datatypes : I_Datatypes;
+	NodeFactory : I_NodeFactory;
+END_VAR
+]]></Declaration>
+			<Implementation>
+				<ST><![CDATA[NodeFactory.AddNodeAsPrototype('Math/Logic/AND/AND_BOOL',AND_BOOL);
+NodeFactory.AddNodeAsPrototype('Math/Logic/AND/AND_BYTE',AND_BYTE);
+NodeFactory.AddNodeAsPrototype('Math/Logic/AND/AND_DINT',AND_DINT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/AND/AND_DWORD',AND_DWORD);
+NodeFactory.AddNodeAsPrototype('Math/Logic/AND/AND_INT',AND_INT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/AND/AND_LINT',AND_LINT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/AND/AND_LWORD',AND_LWORD);
+NodeFactory.AddNodeAsPrototype('Math/Logic/AND/AND_SINT',AND_SINT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/AND/AND_UDINT',AND_UDINT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/AND/AND_UINT',AND_UINT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/AND/AND_ULINT',AND_ULINT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/AND/AND_USINT',AND_USINT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/AND/AND_WORD',AND_WORD);
+
+NodeFactory.AddNodeAsPrototype('Math/Logic/OR/OR_BOOL',OR_BOOL);
+NodeFactory.AddNodeAsPrototype('Math/Logic/OR/OR_BYTE',OR_BYTE);
+NodeFactory.AddNodeAsPrototype('Math/Logic/OR/OR_DINT',OR_DINT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/OR/OR_DWORD',OR_DWORD);
+NodeFactory.AddNodeAsPrototype('Math/Logic/OR/OR_INT',OR_INT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/OR/OR_LINT',OR_LINT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/OR/OR_LWORD',OR_LWORD);
+NodeFactory.AddNodeAsPrototype('Math/Logic/OR/OR_SINT',OR_SINT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/OR/OR_UDINT',OR_UDINT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/OR/OR_UINT',OR_UINT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/OR/OR_ULINT',OR_ULINT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/OR/OR_USINT',OR_USINT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/OR/OR_WORD',OR_WORD);
+
+NodeFactory.AddNodeAsPrototype('Math/Logic/XOR/XOR_BOOL',XOR_BOOL);
+NodeFactory.AddNodeAsPrototype('Math/Logic/XOR/XOR_BYTE',XOR_BYTE);
+NodeFactory.AddNodeAsPrototype('Math/Logic/XOR/XOR_DINT',XOR_DINT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/XOR/XOR_DWORD',XOR_DWORD);
+NodeFactory.AddNodeAsPrototype('Math/Logic/XOR/XOR_INT',XOR_INT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/XOR/XOR_LINT',XOR_LINT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/XOR/XOR_LWORD',XOR_LWORD);
+NodeFactory.AddNodeAsPrototype('Math/Logic/XOR/XOR_SINT',XOR_SINT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/XOR/XOR_UDINT',XOR_UDINT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/XOR/XOR_UINT',XOR_UINT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/XOR/XOR_ULINT',XOR_ULINT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/XOR/XOR_USINT',XOR_USINT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/XOR/XOR_WORD',XOR_WORD);
+
+NodeFactory.AddNodeAsPrototype('Math/Logic/NOT/NOT_BOOL',NOT_BOOL);
+NodeFactory.AddNodeAsPrototype('Math/Logic/NOT/NOT_BYTE',NOT_BYTE);
+NodeFactory.AddNodeAsPrototype('Math/Logic/NOT/NOT_DINT',NOT_DINT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/NOT/NOT_DWORD',NOT_DWORD);
+NodeFactory.AddNodeAsPrototype('Math/Logic/NOT/NOT_INT',NOT_INT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/NOT/NOT_LINT',NOT_LINT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/NOT/NOT_LWORD',NOT_LWORD);
+NodeFactory.AddNodeAsPrototype('Math/Logic/NOT/NOT_SINT',NOT_SINT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/NOT/NOT_UDINT',NOT_UDINT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/NOT/NOT_UINT',NOT_UINT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/NOT/NOT_ULINT',NOT_ULINT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/NOT/NOT_USINT',NOT_USINT);
+NodeFactory.AddNodeAsPrototype('Math/Logic/NOT/NOT_WORD',NOT_WORD);]]></ST>
+			</Implementation>
+		</Method>
+	</POU>
+</TcPlcObject>

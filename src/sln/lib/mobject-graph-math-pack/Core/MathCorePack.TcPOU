@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="MathCorePack" Id="{2d66f2e4-c4a5-4458-bc90-17a783a52a94}" SpecialFunc="None">
+    <Declaration><![CDATA[{attribute 'linkalways'} 
+{attribute 'no_explicit_call' := 'This FB is a CLASS and must be accessed using methods or properties'}
+{attribute 'enable_dynamic_creation'}
+FUNCTION_BLOCK MathCorePack IMPLEMENTS I_GraphPack
+VAR
+	ADD_BYTE : ADD_BYTE;
+	ADD_DINT : ADD_DINT;
+	ADD_DWORD : ADD_DWORD;
+	ADD_INT : ADD_INT;
+	ADD_LINT : ADD_LINT;
+	ADD_LREAL : ADD_LREAL;
+	ADD_LWORD : ADD_LWORD;
+	ADD_REAL : ADD_REAL;
+	ADD_SINT : ADD_SINT;
+	ADD_UDINT : ADD_UDINT;
+	ADD_UINT : ADD_UINT;
+	ADD_ULINT : ADD_ULINT;
+	ADD_USINT : ADD_USINT;
+	ADD_WORD : ADD_WORD;
+	
+	SUB_BYTE : SUB_BYTE;
+	SUB_DINT : SUB_DINT;
+	SUB_DWORD : SUB_DWORD;
+	SUB_INT : SUB_INT;
+	SUB_LINT : SUB_LINT;
+	SUB_LREAL : SUB_LREAL;
+	SUB_LWORD : SUB_LWORD;
+	SUB_REAL : SUB_REAL;
+	SUB_SINT : SUB_SINT;
+	SUB_UDINT : SUB_UDINT;
+	SUB_UINT : SUB_UINT;
+	SUB_ULINT : SUB_ULINT;
+	SUB_USINT : SUB_USINT;
+	SUB_WORD : SUB_WORD;
+	
+	MUL_BYTE : MUL_BYTE;
+	MUL_DINT : MUL_DINT;
+	MUL_DWORD : MUL_DWORD;
+	MUL_INT : MUL_INT;
+	MUL_LINT : MUL_LINT;
+	MUL_LREAL : MUL_LREAL;
+	MUL_LWORD : MUL_LWORD;
+	MUL_REAL : MUL_REAL;
+	MUL_SINT : MUL_SINT;
+	MUL_UDINT : MUL_UDINT;
+	MUL_UINT : MUL_UINT;
+	MUL_ULINT : MUL_ULINT;
+	MUL_USINT : MUL_USINT;
+	MUL_WORD : MUL_WORD;
+	
+	DIV_BYTE : DIV_BYTE;
+	DIV_DINT : DIV_DINT;
+	DIV_DWORD : DIV_DWORD;
+	DIV_INT : DIV_INT;
+	DIV_LINT : DIV_LINT;
+	DIV_LREAL : DIV_LREAL;
+	DIV_LWORD : DIV_LWORD;
+	DIV_REAL : DIV_REAL;
+	DIV_SINT : DIV_SINT;
+	DIV_UDINT : DIV_UDINT;
+	DIV_UINT : DIV_UINT;
+	DIV_ULINT : DIV_ULINT;
+	DIV_USINT : DIV_USINT;
+	DIV_WORD : DIV_WORD;
+	
+	MOD_BYTE : MOD_BYTE;
+	MOD_DINT : MOD_DINT;
+	MOD_DWORD : MOD_DWORD;
+	MOD_INT : MOD_INT;
+	MOD_LINT : MOD_LINT;
+	MOD_LREAL : MOD_LREAL;
+	MOD_LWORD : MOD_LWORD;
+	MOD_SINT : MOD_SINT;
+	MOD_UDINT : MOD_UDINT;
+	MOD_UINT : MOD_UINT;
+	MOD_ULINT : MOD_ULINT;
+	MOD_USINT : MOD_USINT;
+	MOD_WORD : MOD_WORD;
+	
+	FLOOR_LREAL : FLOOR_LREAL;
+	FRAC_LREAL : FRAC_LREAL;
+	TRUNC_LREAL : TRUNC_LREAL;
+	MODABS_LREAL : MODABS_LREAL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Register" Id="{896dee84-ea30-4daf-80e7-06c92802213c}">
+      <Declaration><![CDATA[METHOD Register
+VAR_INPUT
+	Datatypes : I_Datatypes;
+	NodeFactory : I_NodeFactory;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[NodeFactory.AddNodeAsPrototype('Math/Core/ADD/ADD_BYTE',ADD_BYTE);
+NodeFactory.AddNodeAsPrototype('Math/Core/ADD/ADD_DINT',ADD_DINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/ADD/ADD_DWORD',ADD_DWORD);
+NodeFactory.AddNodeAsPrototype('Math/Core/ADD/ADD_INT',ADD_INT);
+NodeFactory.AddNodeAsPrototype('Math/Core/ADD/ADD_LINT',ADD_LINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/ADD/ADD_LREAL',ADD_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Core/ADD/ADD_LWORD',ADD_LWORD);
+NodeFactory.AddNodeAsPrototype('Math/Core/ADD/ADD_REAL',ADD_REAL);
+NodeFactory.AddNodeAsPrototype('Math/Core/ADD/ADD_SINT',ADD_SINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/ADD/ADD_UDINT',ADD_UDINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/ADD/ADD_UINT',ADD_UINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/ADD/ADD_ULINT',ADD_ULINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/ADD/ADD_USINT',ADD_USINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/ADD/ADD_WORD',ADD_WORD);
+
+NodeFactory.AddNodeAsPrototype('Math/Core/SUB/SUB_BYTE',SUB_BYTE);
+NodeFactory.AddNodeAsPrototype('Math/Core/SUB/SUB_DINT',SUB_DINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/SUB/SUB_DWORD',SUB_DWORD);
+NodeFactory.AddNodeAsPrototype('Math/Core/SUB/SUB_INT',SUB_INT);
+NodeFactory.AddNodeAsPrototype('Math/Core/SUB/SUB_LINT',SUB_LINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/SUB/SUB_LREAL',SUB_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Core/SUB/SUB_LWORD',SUB_LWORD);
+NodeFactory.AddNodeAsPrototype('Math/Core/SUB/SUB_REAL',SUB_REAL);
+NodeFactory.AddNodeAsPrototype('Math/Core/SUB/SUB_SINT',SUB_SINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/SUB/SUB_UDINT',SUB_UDINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/SUB/SUB_UINT',SUB_UINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/SUB/SUB_ULINT',SUB_ULINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/SUB/SUB_USINT',SUB_USINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/SUB/SUB_WORD',SUB_WORD);
+
+NodeFactory.AddNodeAsPrototype('Math/Core/MUL/MUL_BYTE',MUL_BYTE);
+NodeFactory.AddNodeAsPrototype('Math/Core/MUL/MUL_DINT',MUL_DINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/MUL/MUL_DWORD',MUL_DWORD);
+NodeFactory.AddNodeAsPrototype('Math/Core/MUL/MUL_INT',MUL_INT);
+NodeFactory.AddNodeAsPrototype('Math/Core/MUL/MUL_LINT',MUL_LINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/MUL/MUL_LREAL',MUL_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Core/MUL/MUL_LWORD',MUL_LWORD);
+NodeFactory.AddNodeAsPrototype('Math/Core/MUL/MUL_REAL',MUL_REAL);
+NodeFactory.AddNodeAsPrototype('Math/Core/MUL/MUL_SINT',MUL_SINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/MUL/MUL_UDINT',MUL_UDINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/MUL/MUL_UINT',MUL_UINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/MUL/MUL_ULINT',MUL_ULINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/MUL/MUL_USINT',MUL_USINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/MUL/MUL_WORD',MUL_WORD);
+
+NodeFactory.AddNodeAsPrototype('Math/Core/DIV/DIV_BYTE',DIV_BYTE);
+NodeFactory.AddNodeAsPrototype('Math/Core/DIV/DIV_DINT',DIV_DINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/DIV/DIV_DWORD',DIV_DWORD);
+NodeFactory.AddNodeAsPrototype('Math/Core/DIV/DIV_INT',DIV_INT);
+NodeFactory.AddNodeAsPrototype('Math/Core/DIV/DIV_LINT',DIV_LINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/DIV/DIV_LREAL',DIV_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Core/DIV/DIV_LWORD',DIV_LWORD);
+NodeFactory.AddNodeAsPrototype('Math/Core/DIV/DIV_REAL',DIV_REAL);
+NodeFactory.AddNodeAsPrototype('Math/Core/DIV/DIV_SINT',DIV_SINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/DIV/DIV_UDINT',DIV_UDINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/DIV/DIV_UINT',DIV_UINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/DIV/DIV_ULINT',DIV_ULINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/DIV/DIV_USINT',DIV_USINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/DIV/DIV_WORD',DIV_WORD);
+
+NodeFactory.AddNodeAsPrototype('Math/Core/MOD/MOD_BYTE',MOD_BYTE);
+NodeFactory.AddNodeAsPrototype('Math/Core/MOD/MOD_DINT',MOD_DINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/MOD/MOD_DWORD',MOD_DWORD);
+NodeFactory.AddNodeAsPrototype('Math/Core/MOD/MOD_INT',MOD_INT);
+NodeFactory.AddNodeAsPrototype('Math/Core/MOD/MOD_LINT',MOD_LINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/MOD/MOD_LREAL',MOD_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Core/MOD/MOD_LWORD',MOD_LWORD);
+NodeFactory.AddNodeAsPrototype('Math/Core/MOD/MOD_SINT',MOD_SINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/MOD/MOD_UDINT',MOD_UDINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/MOD/MOD_UINT',MOD_UINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/MOD/MOD_ULINT',MOD_ULINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/MOD/MOD_USINT',MOD_USINT);
+NodeFactory.AddNodeAsPrototype('Math/Core/MOD/MOD_WORD',MOD_WORD);
+
+NodeFactory.AddNodeAsPrototype('Math/Core/Utils/FLOOR_LREAL',FLOOR_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Core/Utils/FRAC_LREAL',FRAC_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Core/Utils/TRUNC_LREAL',TRUNC_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Core/Utils/MODABS_LREAL',MODABS_LREAL);]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

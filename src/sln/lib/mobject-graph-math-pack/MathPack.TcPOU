@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="MathPack" Id="{7dcf7e3b-5b0d-021f-32cb-1f0bd0a27203}" SpecialFunc="None">
+    <Declaration><![CDATA[{attribute 'linkalways'} 
+{attribute 'no_explicit_call' := 'This FB is a CLASS and must be accessed using methods or properties'}
+{attribute 'enable_dynamic_creation'}
+FUNCTION_BLOCK MathPack IMPLEMENTS I_GraphPack
+VAR
+	mathCorePack : MathCorePack;
+	mathLogicPack : MathLogicPack;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Register" Id="{ba25e718-2cd4-0387-37ce-22ad9a7b79ae}">
+      <Declaration><![CDATA[METHOD Register
+VAR_INPUT
+	Datatypes : I_Datatypes;
+	NodeFactory : I_NodeFactory;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[mathCorePack.Register(Datatypes, NodeFactory);
+mathLogicPack.Register(Datatypes, NodeFactory);]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

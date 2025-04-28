@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="DIV_DINT" Id="{502c6dde-3b31-41bc-8873-6b2167f60471}" SpecialFunc="None">
+    <Declaration><![CDATA[{attribute 'linkalways'} 
+{attribute 'no_explicit_call' := 'This FB is a CLASS and must be accessed using methods or properties'}
+{attribute 'enable_dynamic_creation'}
+FUNCTION_BLOCK FINAL DIV_DINT EXTENDS Node
+VAR
+	in1 : _DINT(0);
+	in2 : _DINT(0);
+	out : _DINT(0);
+	div0 : _BOOL(FALSE);
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Folder Name="Constructor" Id="{b04ab8da-99bf-41bd-81cf-09ed4ff825e5}" />
+    <Method Name="Clone" Id="{7db76737-206b-4507-97fa-499b4d59cc54}">
+      <Declaration><![CDATA[METHOD PUBLIC Clone : I_Node
+VAR
+	pNode : POINTER TO DIV_DINT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[pNode := __NEW(DIV_DINT);
+Clone := pNode^;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="FB_init" Id="{1f97ea7e-1616-4b33-b185-a3284499e734}" FolderPath="Constructor\">
+      <Declaration><![CDATA[METHOD FB_init : BOOL
+VAR_INPUT
+	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[AddInput('in1',THIS^.in1);
+AddInput('in2',THIS^.in2);
+AddOutput('out', THIS^.out);
+AddOutput('div0', THIS^.div0);]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="OnExecute" Id="{ebf1ecd0-50af-4493-a8f5-900a517c6cc1}">
+      <Declaration><![CDATA[METHOD PROTECTED OnExecute
+VAR
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF in2.Value = 0 THEN
+	div0.Value := TRUE;
+	RETURN;
+END_IF
+
+out.Value := in1.Value / in2.Value;
+div0.Value := FALSE;]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

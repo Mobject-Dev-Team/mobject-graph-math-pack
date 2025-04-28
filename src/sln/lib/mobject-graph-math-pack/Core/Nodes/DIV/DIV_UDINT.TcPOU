@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="DIV_UDINT" Id="{7616241b-267d-466e-a692-7bf82fab2431}" SpecialFunc="None">
+    <Declaration><![CDATA[{attribute 'linkalways'} 
+{attribute 'no_explicit_call' := 'This FB is a CLASS and must be accessed using methods or properties'}
+{attribute 'enable_dynamic_creation'}
+FUNCTION_BLOCK FINAL DIV_UDINT EXTENDS Node
+VAR
+	in1 : _UDINT(0);
+	in2 : _UDINT(0);
+	out : _UDINT(0);
+	div0 : _BOOL(FALSE);
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Folder Name="Constructor" Id="{1d13c802-e94d-4470-9988-fb6c52164928}" />
+    <Method Name="Clone" Id="{33e25b0d-7be9-4a86-925f-b25618df74a2}">
+      <Declaration><![CDATA[METHOD PUBLIC Clone : I_Node
+VAR
+	pNode : POINTER TO DIV_UDINT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[pNode := __NEW(DIV_UDINT);
+Clone := pNode^;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="FB_init" Id="{65d8a121-182e-45e9-8b6b-3e4d05909950}" FolderPath="Constructor\">
+      <Declaration><![CDATA[METHOD FB_init : BOOL
+VAR_INPUT
+	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[AddInput('in1',THIS^.in1);
+AddInput('in2',THIS^.in2);
+AddOutput('out', THIS^.out);
+AddOutput('div0', THIS^.div0);]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="OnExecute" Id="{49cc0954-9643-440d-8976-8f2c9ba7eca8}">
+      <Declaration><![CDATA[METHOD PROTECTED OnExecute
+VAR
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF in2.Value = 0 THEN
+	div0.Value := TRUE;
+	RETURN;
+END_IF
+
+out.Value := in1.Value / in2.Value;
+div0.Value := FALSE;]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>
