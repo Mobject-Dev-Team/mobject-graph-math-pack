@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="MathAdvancedPack" Id="{af36170e-5162-4f44-b731-3e1f9f4595c6}" SpecialFunc="None">
+    <Declaration><![CDATA[{attribute 'linkalways'} 
+{attribute 'no_explicit_call' := 'This FB is a CLASS and must be accessed using methods or properties'}
+{attribute 'enable_dynamic_creation'}
+FUNCTION_BLOCK MathAdvancedPack IMPLEMENTS I_GraphPack
+VAR
+	ABS_BYTE : ABS_BYTE;
+	ABS_DINT : ABS_DINT;
+	ABS_DWORD : ABS_DWORD;
+	ABS_INT : ABS_INT;
+	ABS_LINT : ABS_LINT;
+	ABS_LREAL : ABS_LREAL;
+	ABS_LWORD : ABS_LWORD;
+	ABS_REAL : ABS_REAL;
+	ABS_SINT : ABS_SINT;
+	ABS_UDINT : ABS_UDINT;
+	ABS_UINT : ABS_UINT;
+	ABS_ULINT : ABS_ULINT;
+	ABS_USINT : ABS_USINT;
+	ABS_WORD : ABS_WORD;
+	
+	FLOOR_LREAL : FLOOR_LREAL;
+	FRAC_LREAL : FRAC_LREAL;
+	TRUNC_LREAL : TRUNC_LREAL;
+	MODABS_LREAL : MODABS_LREAL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Register" Id="{2a9ee408-434a-4c1e-bb02-262b4a2d73a5}">
+      <Declaration><![CDATA[METHOD Register
+VAR_INPUT
+	Datatypes : I_Datatypes;
+	NodeFactory : I_NodeFactory;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[NodeFactory.AddNodeAsPrototype('Math/Advanced/ABS/ABS_BYTE',ABS_BYTE);
+NodeFactory.AddNodeAsPrototype('Math/Advanced/ABS/ABS_DINT',ABS_DINT);
+NodeFactory.AddNodeAsPrototype('Math/Advanced/ABS/ABS_DWORD',ABS_DWORD);
+NodeFactory.AddNodeAsPrototype('Math/Advanced/ABS/ABS_INT',ABS_INT);
+NodeFactory.AddNodeAsPrototype('Math/Advanced/ABS/ABS_LINT',ABS_LINT);
+NodeFactory.AddNodeAsPrototype('Math/Advanced/ABS/ABS_LREAL',ABS_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Advanced/ABS/ABS_LWORD',ABS_LWORD);
+NodeFactory.AddNodeAsPrototype('Math/Advanced/ABS/ABS_REAL',ABS_REAL);
+NodeFactory.AddNodeAsPrototype('Math/Advanced/ABS/ABS_SINT',ABS_SINT);
+NodeFactory.AddNodeAsPrototype('Math/Advanced/ABS/ABS_UDINT',ABS_UDINT);
+NodeFactory.AddNodeAsPrototype('Math/Advanced/ABS/ABS_UINT',ABS_UINT);
+NodeFactory.AddNodeAsPrototype('Math/Advanced/ABS/ABS_ULINT',ABS_ULINT);
+NodeFactory.AddNodeAsPrototype('Math/Advanced/ABS/ABS_USINT',ABS_USINT);
+NodeFactory.AddNodeAsPrototype('Math/Advanced/ABS/ABS_WORD',ABS_WORD);
+
+NodeFactory.AddNodeAsPrototype('Math/Advanced/FLOOR/FLOOR_LREAL',FLOOR_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Advanced/FRAC/FRAC_LREAL',FRAC_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Advanced/TRUNC/TRUNC_LREAL',TRUNC_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Advanced/MODABS/MODABS_LREAL',MODABS_LREAL);]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

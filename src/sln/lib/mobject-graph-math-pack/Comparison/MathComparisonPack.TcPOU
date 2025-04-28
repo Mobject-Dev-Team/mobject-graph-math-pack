@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="MathComparisonPack" Id="{7c62dd03-e791-4ab0-9386-56a6d55e2659}" SpecialFunc="None">
+    <Declaration><![CDATA[{attribute 'linkalways'} 
+{attribute 'no_explicit_call' := 'This FB is a CLASS and must be accessed using methods or properties'}
+{attribute 'enable_dynamic_creation'}
+FUNCTION_BLOCK MathComparisonPack IMPLEMENTS I_GraphPack
+VAR
+	GT_BYTE : GT_BYTE;
+	GT_DINT : GT_DINT;
+	GT_DWORD : GT_DWORD;
+	GT_INT : GT_INT;
+	GT_LINT : GT_LINT;
+	GT_LREAL : GT_LREAL;
+	GT_LWORD : GT_LWORD;
+	GT_REAL : GT_REAL;
+	GT_SINT : GT_SINT;
+	GT_UDINT : GT_UDINT;
+	GT_UINT : GT_UINT;
+	GT_ULINT : GT_ULINT;
+	GT_USINT : GT_USINT;
+	GT_WORD : GT_WORD;
+	LT_BYTE : LT_BYTE;
+	
+	LT_DINT : LT_DINT;
+	LT_DWORD : LT_DWORD;
+	LT_INT : LT_INT;
+	LT_LINT : LT_LINT;
+	LT_LREAL : LT_LREAL;
+	LT_LWORD : LT_LWORD;
+	LT_REAL : LT_REAL;
+	LT_SINT : LT_SINT;
+	LT_UDINT : LT_UDINT;
+	LT_UINT : LT_UINT;
+	LT_ULINT : LT_ULINT;
+	LT_USINT : LT_USINT;
+	LT_WORD : LT_WORD;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Register" Id="{ffbb9721-56cb-4fcd-80e9-769e498bd035}">
+      <Declaration><![CDATA[METHOD Register
+VAR_INPUT
+	Datatypes : I_Datatypes;
+	NodeFactory : I_NodeFactory;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[NodeFactory.AddNodeAsPrototype('Math/Comparison/GT/GT_BYTE',GT_BYTE);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/GT/GT_DINT',GT_DINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/GT/GT_DWORD',GT_DWORD);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/GT/GT_INT',GT_INT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/GT/GT_LINT',GT_LINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/GT/GT_LREAL',GT_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/GT/GT_LWORD',GT_LWORD);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/GT/GT_REAL',GT_REAL);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/GT/GT_SINT',GT_SINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/GT/GT_UDINT',GT_UDINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/GT/GT_UINT',GT_UINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/GT/GT_ULINT',GT_ULINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/GT/GT_USINT',GT_USINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/GT/GT_WORD',GT_WORD);
+
+NodeFactory.AddNodeAsPrototype('Math/Comparison/LT/LT_BYTE',LT_BYTE);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/LT/LT_DINT',LT_DINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/LT/LT_DWORD',LT_DWORD);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/LT/LT_INT',LT_INT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/LT/LT_LINT',LT_LINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/LT/LT_LREAL',LT_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/LT/LT_LWORD',LT_LWORD);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/LT/LT_REAL',LT_REAL);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/LT/LT_SINT',LT_SINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/LT/LT_UDINT',LT_UDINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/LT/LT_UINT',LT_UINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/LT/LT_ULINT',LT_ULINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/LT/LT_USINT',LT_USINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/LT/LT_WORD',LT_WORD);]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

@@ -80,10 +80,7 @@ VAR
 	MOD_USINT : MOD_USINT;
 	MOD_WORD : MOD_WORD;
 	
-	FLOOR_LREAL : FLOOR_LREAL;
-	FRAC_LREAL : FRAC_LREAL;
-	TRUNC_LREAL : TRUNC_LREAL;
-	MODABS_LREAL : MODABS_LREAL;
+
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -171,10 +168,7 @@ NodeFactory.AddNodeAsPrototype('Math/Core/MOD/MOD_ULINT',MOD_ULINT);
 NodeFactory.AddNodeAsPrototype('Math/Core/MOD/MOD_USINT',MOD_USINT);
 NodeFactory.AddNodeAsPrototype('Math/Core/MOD/MOD_WORD',MOD_WORD);
 
-NodeFactory.AddNodeAsPrototype('Math/Core/Utils/FLOOR_LREAL',FLOOR_LREAL);
-NodeFactory.AddNodeAsPrototype('Math/Core/Utils/FRAC_LREAL',FRAC_LREAL);
-NodeFactory.AddNodeAsPrototype('Math/Core/Utils/TRUNC_LREAL',TRUNC_LREAL);
-NodeFactory.AddNodeAsPrototype('Math/Core/Utils/MODABS_LREAL',MODABS_LREAL);]]></ST>
+]]></ST>
       </Implementation>
     </Method>
   </POU>

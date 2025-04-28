@@ -8,6 +8,8 @@ FUNCTION_BLOCK MathPack IMPLEMENTS I_GraphPack
 VAR
 	mathCorePack : MathCorePack;
 	mathLogicPack : MathLogicPack;
+	mathAdvancedPack : MathAdvancedPack;
+	mathComparisonPack : MathComparisonPack;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -22,7 +24,9 @@ END_VAR
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[mathCorePack.Register(Datatypes, NodeFactory);
-mathLogicPack.Register(Datatypes, NodeFactory);]]></ST>
+mathLogicPack.Register(Datatypes, NodeFactory);
+mathAdvancedPack.Register(Datatypes, NodeFactory);
+mathComparisonPack.Register(Datatypes, NodeFactory);]]></ST>
       </Implementation>
     </Method>
   </POU>
