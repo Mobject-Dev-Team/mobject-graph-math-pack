@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="COS_LREAL" Id="{d9fd4127-cab2-48b3-a160-6557301d0e08}" SpecialFunc="None">
+    <Declaration><![CDATA[{attribute 'linkalways'} 
+{attribute 'no_explicit_call' := 'This FB is a CLASS and must be accessed using methods or properties'}
+{attribute 'enable_dynamic_creation'}
+FUNCTION_BLOCK FINAL COS_LREAL EXTENDS Node
+VAR
+	in : _LREAL(0.0);
+	out : _LREAL(0.0);
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Folder Name="Constructor" Id="{46333e0d-275a-4eaa-8d40-8ce6da08bf42}" />
+    <Method Name="Clone" Id="{9c4aa3c5-cb7a-474f-b74f-2de858b79a87}">
+      <Declaration><![CDATA[METHOD PUBLIC Clone : I_Node
+VAR
+	pNode : POINTER TO COS_LREAL;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[pNode := __NEW(COS_LREAL);
+Clone := pNode^;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="FB_init" Id="{3d45d45b-736e-4505-89d6-55e3f3badba6}" FolderPath="Constructor\">
+      <Declaration><![CDATA[METHOD FB_init : BOOL
+VAR_INPUT
+	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[AddInput('in',THIS^.in);
+AddOutput('out', THIS^.out);]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="OnExecute" Id="{5e0c93d5-1644-4185-9e40-1599d3a5ae1d}">
+      <Declaration><![CDATA[METHOD PROTECTED OnExecute
+VAR
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[out.Value := COS(in.Value);]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

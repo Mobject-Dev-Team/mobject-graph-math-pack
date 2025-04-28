@@ -72,10 +72,25 @@
     <Folder Include="Advanced\Nodes\FRAC" />
     <Folder Include="Advanced\Nodes\MODABS" />
     <Folder Include="Advanced\Nodes\MODTURNS" />
+    <Folder Include="Advanced\Nodes\ACOS" />
+    <Folder Include="Advanced\Nodes\ASIN" />
+    <Folder Include="Advanced\Nodes\ATAN" />
+    <Folder Include="Advanced\Nodes\COS" />
+    <Folder Include="Advanced\Nodes\LOG" />
+    <Folder Include="Advanced\Nodes\LN" />
+    <Folder Include="Advanced\Nodes\EXP" />
+    <Folder Include="Advanced\Nodes\EXPT" />
+    <Folder Include="Advanced\Nodes\SQRT" />
+    <Folder Include="Advanced\Nodes\TAN" />
+    <Folder Include="Advanced\Nodes\SIN" />
     <Folder Include="Advanced\Nodes\TRUNC" />
     <Folder Include="Comparison\Nodes" />
+    <Folder Include="Comparison\Nodes\EQ" />
+    <Folder Include="Comparison\Nodes\GE" />
     <Folder Include="Comparison\Nodes\GT" />
+    <Folder Include="Comparison\Nodes\LE" />
     <Folder Include="Comparison\Nodes\LT" />
+    <Folder Include="Comparison\Nodes\NE" />
     <Folder Include="Core" />
     <Folder Include="Core\Nodes" />
     <Folder Include="Core\Nodes\ADD" />
@@ -135,10 +150,34 @@
     <Compile Include="Advanced\Nodes\ABS\ABS_WORD.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Advanced\Nodes\ACOS\ACOS_LREAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Advanced\Nodes\ASIN\ASIN_LREAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Advanced\Nodes\ATAN\ATAN_LREAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Advanced\Nodes\COS\COS_LREAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Advanced\Nodes\EXPT\EXPT_LREAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Advanced\Nodes\EXP\EXP_LREAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Advanced\Nodes\FLOOR\FLOOR_LREAL.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Advanced\Nodes\FRAC\FRAC_LREAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Advanced\Nodes\LN\LN_LREAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Advanced\Nodes\LOG\LOG_LREAL.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Advanced\Nodes\MathAdvancedPack.TcPOU">
@@ -150,10 +189,103 @@
     <Compile Include="Advanced\Nodes\MODTURNS\MODTURNS_LREAL.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Advanced\Nodes\SIN\SIN_LREAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Advanced\Nodes\SQRT\SQRT_LREAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Advanced\Nodes\TAN\TAN_LREAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Advanced\Nodes\TRUNC\TRUNC_LREAL.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Comparison\MathComparisonPack.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\EQ\EQ_BYTE.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\EQ\EQ_DINT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\EQ\EQ_DWORD.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\EQ\EQ_INT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\EQ\EQ_LINT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\EQ\EQ_LREAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\EQ\EQ_LWORD.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\EQ\EQ_REAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\EQ\EQ_SINT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\EQ\EQ_UDINT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\EQ\EQ_UINT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\EQ\EQ_ULINT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\EQ\EQ_USINT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\EQ\EQ_WORD.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\GE\GE_BYTE.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\GE\GE_DINT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\GE\GE_DWORD.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\GE\GE_INT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\GE\GE_LINT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\GE\GE_LREAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\GE\GE_LWORD.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\GE\GE_REAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\GE\GE_SINT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\GE\GE_UDINT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\GE\GE_UINT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\GE\GE_ULINT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\GE\GE_USINT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\GE\GE_WORD.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Comparison\Nodes\GT\GT_BYTE.TcPOU">
@@ -198,6 +330,48 @@
     <Compile Include="Comparison\Nodes\GT\GT_WORD.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Comparison\Nodes\LE\LE_BYTE.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\LE\LE_DINT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\LE\LE_DWORD.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\LE\LE_INT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\LE\LE_LINT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\LE\LE_LREAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\LE\LE_LWORD.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\LE\LE_REAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\LE\LE_SINT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\LE\LE_UDINT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\LE\LE_UINT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\LE\LE_ULINT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\LE\LE_USINT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\LE\LE_WORD.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Comparison\Nodes\LT\LT_BYTE.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -238,6 +412,48 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Comparison\Nodes\LT\LT_WORD.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\NE\NE_BYTE.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\NE\NE_DINT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\NE\NE_DWORD.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\NE\NE_INT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\NE\NE_LINT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\NE\NE_LREAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\NE\NE_LWORD.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\NE\NE_REAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\NE\NE_SINT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\NE\NE_UDINT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\NE\NE_UINT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\NE\NE_ULINT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\NE\NE_USINT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\NE\NE_WORD.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Core\MathCorePack.TcPOU">

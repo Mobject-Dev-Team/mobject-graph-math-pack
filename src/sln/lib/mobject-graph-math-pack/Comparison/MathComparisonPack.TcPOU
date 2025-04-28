@@ -35,6 +35,62 @@ VAR
 	LT_ULINT : LT_ULINT;
 	LT_USINT : LT_USINT;
 	LT_WORD : LT_WORD;
+	
+	EQ_DINT : EQ_DINT;
+	EQ_DWORD : EQ_DWORD;
+	EQ_INT : EQ_INT;
+	EQ_LINT : EQ_LINT;
+	EQ_LREAL : EQ_LREAL;
+	EQ_LWORD : EQ_LWORD;
+	EQ_REAL : EQ_REAL;
+	EQ_SINT : EQ_SINT;
+	EQ_UDINT : EQ_UDINT;
+	EQ_UINT : EQ_UINT;
+	EQ_ULINT : EQ_ULINT;
+	EQ_USINT : EQ_USINT;
+	EQ_WORD : EQ_WORD;
+	
+	NE_DINT : NE_DINT;
+	NE_DWORD : NE_DWORD;
+	NE_INT : NE_INT;
+	NE_LINT : NE_LINT;
+	NE_LREAL : NE_LREAL;
+	NE_LWORD : NE_LWORD;
+	NE_REAL : NE_REAL;
+	NE_SINT : NE_SINT;
+	NE_UDINT : NE_UDINT;
+	NE_UINT : NE_UINT;
+	NE_ULINT : NE_ULINT;
+	NE_USINT : NE_USINT;
+	NE_WORD : NE_WORD;
+	
+	LE_DINT : LE_DINT;
+	LE_DWORD : LE_DWORD;
+	LE_INT : LE_INT;
+	LE_LINT : LE_LINT;
+	LE_LREAL : LE_LREAL;
+	LE_LWORD : LE_LWORD;
+	LE_REAL : LE_REAL;
+	LE_SINT : LE_SINT;
+	LE_UDINT : LE_UDINT;
+	LE_UINT : LE_UINT;
+	LE_ULINT : LE_ULINT;
+	LE_USINT : LE_USINT;
+	LE_WORD : LE_WORD;
+	
+	GE_DINT : GE_DINT;
+	GE_DWORD : GE_DWORD;
+	GE_INT : GE_INT;
+	GE_LINT : GE_LINT;
+	GE_LREAL : GE_LREAL;
+	GE_LWORD : GE_LWORD;
+	GE_REAL : GE_REAL;
+	GE_SINT : GE_SINT;
+	GE_UDINT : GE_UDINT;
+	GE_UINT : GE_UINT;
+	GE_ULINT : GE_ULINT;
+	GE_USINT : GE_USINT;
+	GE_WORD : GE_WORD;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -76,7 +132,67 @@ NodeFactory.AddNodeAsPrototype('Math/Comparison/LT/LT_UDINT',LT_UDINT);
 NodeFactory.AddNodeAsPrototype('Math/Comparison/LT/LT_UINT',LT_UINT);
 NodeFactory.AddNodeAsPrototype('Math/Comparison/LT/LT_ULINT',LT_ULINT);
 NodeFactory.AddNodeAsPrototype('Math/Comparison/LT/LT_USINT',LT_USINT);
-NodeFactory.AddNodeAsPrototype('Math/Comparison/LT/LT_WORD',LT_WORD);]]></ST>
+NodeFactory.AddNodeAsPrototype('Math/Comparison/LT/LT_WORD',LT_WORD);
+
+NodeFactory.AddNodeAsPrototype('Math/Comparison/EQ/EQ_BYTE',EQ_BYTE);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/EQ/EQ_DINT',EQ_DINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/EQ/EQ_DWORD',EQ_DWORD);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/EQ/EQ_INT',EQ_INT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/EQ/EQ_LINT',EQ_LINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/EQ/EQ_LREAL',EQ_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/EQ/EQ_LWORD',EQ_LWORD);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/EQ/EQ_REAL',EQ_REAL);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/EQ/EQ_SINT',EQ_SINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/EQ/EQ_UDINT',EQ_UDINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/EQ/EQ_UINT',EQ_UINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/EQ/EQ_ULINT',EQ_ULINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/EQ/EQ_USINT',EQ_USINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/EQ/EQ_WORD',EQ_WORD);
+
+NodeFactory.AddNodeAsPrototype('Math/Comparison/NE/NE_BYTE',NE_BYTE);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/NE/NE_DINT',NE_DINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/NE/NE_DWORD',NE_DWORD);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/NE/NE_INT',NE_INT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/NE/NE_LINT',NE_LINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/NE/NE_LREAL',NE_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/NE/NE_LWORD',NE_LWORD);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/NE/NE_REAL',NE_REAL);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/NE/NE_SINT',NE_SINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/NE/NE_UDINT',NE_UDINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/NE/NE_UINT',NE_UINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/NE/NE_ULINT',NE_ULINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/NE/NE_USINT',NE_USINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/NE/NE_WORD',NE_WORD);
+
+NodeFactory.AddNodeAsPrototype('Math/Comparison/LE/LE_BYTE',LE_BYTE);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/LE/LE_DINT',LE_DINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/LE/LE_DWORD',LE_DWORD);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/LE/LE_INT',LE_INT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/LE/LE_LINT',LE_LINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/LE/LE_LREAL',LE_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/LE/LE_LWORD',LE_LWORD);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/LE/LE_REAL',LE_REAL);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/LE/LE_SINT',LE_SINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/LE/LE_UDINT',LE_UDINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/LE/LE_UINT',LE_UINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/LE/LE_ULINT',LE_ULINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/LE/LE_USINT',LE_USINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/LE/LE_WORD',LE_WORD);
+
+NodeFactory.AddNodeAsPrototype('Math/Comparison/GE/GE_BYTE',GE_BYTE);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/GE/GE_DINT',GE_DINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/GE/GE_DWORD',GE_DWORD);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/GE/GE_INT',GE_INT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/GE/GE_LINT',GE_LINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/GE/GE_LREAL',GE_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/GE/GE_LWORD',GE_LWORD);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/GE/GE_REAL',GE_REAL);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/GE/GE_SINT',GE_SINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/GE/GE_UDINT',GE_UDINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/GE/GE_UINT',GE_UINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/GE/GE_ULINT',GE_ULINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/GE/GE_USINT',GE_USINT);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/GE/GE_WORD',GE_WORD);]]></ST>
       </Implementation>
     </Method>
   </POU>

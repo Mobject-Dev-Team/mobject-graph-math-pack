@@ -21,8 +21,20 @@ VAR
 	ABS_USINT : ABS_USINT;
 	ABS_WORD : ABS_WORD;
 	
+	ACOS_LREAL : ACOS_LREAL;
+	ASIN_LREAL : ASIN_LREAL;
+	ATAN_LREAL : ATAN_LREAL;
+	COS_LREAL : COS_LREAL;
+	SIN_LREAL : SIN_LREAL;
+	TAN_LREAL : TAN_LREAL;
+	
+	EXP_LREAL : EXP_LREAL;
+	EXPT_LREAL : EXPT_LREAL;
 	FLOOR_LREAL : FLOOR_LREAL;
 	FRAC_LREAL : FRAC_LREAL;
+	LN_LREAL : LN_LREAL;
+	LOG_LREAL : LOG_LREAL;
+	SQRT_LREAL : SQRT_LREAL;
 	TRUNC_LREAL : TRUNC_LREAL;
 	MODABS_LREAL : MODABS_LREAL;
 END_VAR
@@ -53,8 +65,20 @@ NodeFactory.AddNodeAsPrototype('Math/Advanced/ABS/ABS_ULINT',ABS_ULINT);
 NodeFactory.AddNodeAsPrototype('Math/Advanced/ABS/ABS_USINT',ABS_USINT);
 NodeFactory.AddNodeAsPrototype('Math/Advanced/ABS/ABS_WORD',ABS_WORD);
 
+NodeFactory.AddNodeAsPrototype('Math/Advanced/ACOS/ACOS_LREAL',ACOS_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Advanced/ASIN/ASIN_LREAL',ASIN_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Advanced/ATAN/ATAN_LREAL',ATAN_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Advanced/COS/COS_LREAL',COS_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Advanced/SIN/SIN_LREAL',SIN_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Advanced/TAN/TAN_LREAL',TAN_LREAL);
+
+NodeFactory.AddNodeAsPrototype('Math/Advanced/EXP/EXP_LREAL',EXP_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Advanced/EXPT/EXPT_LREAL',EXPT_LREAL);
 NodeFactory.AddNodeAsPrototype('Math/Advanced/FLOOR/FLOOR_LREAL',FLOOR_LREAL);
 NodeFactory.AddNodeAsPrototype('Math/Advanced/FRAC/FRAC_LREAL',FRAC_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Advanced/LN/LN_LREAL',LN_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Advanced/LOG/LOG_LREAL',LOG_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Advanced/SQRT/SQRT_LREAL',SQRT_LREAL);
 NodeFactory.AddNodeAsPrototype('Math/Advanced/TRUNC/TRUNC_LREAL',TRUNC_LREAL);
 NodeFactory.AddNodeAsPrototype('Math/Advanced/MODABS/MODABS_LREAL',MODABS_LREAL);]]></ST>
       </Implementation>
