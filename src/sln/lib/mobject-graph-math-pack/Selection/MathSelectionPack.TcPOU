@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <POU Name="MathSelectionPack" Id="{fd96bb82-50cc-437d-beae-9418dbf52a43}" SpecialFunc="None">
+    <Declaration><![CDATA[{attribute 'linkalways'} 
+{attribute 'no_explicit_call' := 'This FB is a CLASS and must be accessed using methods or properties'}
+{attribute 'enable_dynamic_creation'}
+FUNCTION_BLOCK MathSelectionPack IMPLEMENTS I_GraphPack
+VAR
+	MAX_BYTE : MAX_BYTE;
+	MAX_DINT : MAX_DINT;
+	MAX_DWORD : MAX_DWORD;
+	MAX_INT : MAX_INT;
+	MAX_LINT : MAX_LINT;
+	MAX_LREAL : MAX_LREAL;
+	MAX_LWORD : MAX_LWORD;
+	MAX_REAL : MAX_REAL;
+	MAX_SINT : MAX_SINT;
+	MAX_UDINT : MAX_UDINT;
+	MAX_UINT : MAX_UINT;
+	MAX_ULINT : MAX_ULINT;
+	MAX_USINT : MAX_USINT;
+	MAX_WORD : MAX_WORD;
+	
+	MIN_BYTE : MIN_BYTE;
+	MIN_DINT : MIN_DINT;
+	MIN_DWORD : MIN_DWORD;
+	MIN_INT : MIN_INT;
+	MIN_LINT : MIN_LINT;
+	MIN_LREAL : MIN_LREAL;
+	MIN_LWORD : MIN_LWORD;
+	MIN_REAL : MIN_REAL;
+	MIN_SINT : MIN_SINT;
+	MIN_UDINT : MIN_UDINT;
+	MIN_UINT : MIN_UINT;
+	MIN_ULINT : MIN_ULINT;
+	MIN_USINT : MIN_USINT;
+	MIN_WORD : MIN_WORD;
+	
+	SEL_BYTE : SEL_BYTE;
+	SEL_DINT : SEL_DINT;
+	SEL_DWORD : SEL_DWORD;
+	SEL_INT : SEL_INT;
+	SEL_LINT : SEL_LINT;
+	SEL_LREAL : SEL_LREAL;
+	SEL_LWORD : SEL_LWORD;
+	SEL_REAL : SEL_REAL;
+	SEL_SINT : SEL_SINT;
+	SEL_UDINT : SEL_UDINT;
+	SEL_UINT : SEL_UINT;
+	SEL_ULINT : SEL_ULINT;
+	SEL_USINT : SEL_USINT;
+	SEL_WORD : SEL_WORD;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Register" Id="{fbbf49a2-ac9e-4010-9c13-7a59cf86e439}">
+      <Declaration><![CDATA[METHOD Register
+VAR_INPUT
+	Datatypes : I_Datatypes;
+	NodeFactory : I_NodeFactory;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[NodeFactory.AddNodeAsPrototype('Math/Selection/MAX/MAX_BYTE',MAX_BYTE);
+NodeFactory.AddNodeAsPrototype('Math/Selection/MAX/MAX_DINT',MAX_DINT);
+NodeFactory.AddNodeAsPrototype('Math/Selection/MAX/MAX_DWORD',MAX_DWORD);
+NodeFactory.AddNodeAsPrototype('Math/Selection/MAX/MAX_INT',MAX_INT);
+NodeFactory.AddNodeAsPrototype('Math/Selection/MAX/MAX_LINT',MAX_LINT);
+NodeFactory.AddNodeAsPrototype('Math/Selection/MAX/MAX_LREAL',MAX_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Selection/MAX/MAX_LWORD',MAX_LWORD);
+NodeFactory.AddNodeAsPrototype('Math/Selection/MAX/MAX_REAL',MAX_REAL);
+NodeFactory.AddNodeAsPrototype('Math/Selection/MAX/MAX_SINT',MAX_SINT);
+NodeFactory.AddNodeAsPrototype('Math/Selection/MAX/MAX_UDINT',MAX_UDINT);
+NodeFactory.AddNodeAsPrototype('Math/Selection/MAX/MAX_UINT',MAX_UINT);
+NodeFactory.AddNodeAsPrototype('Math/Selection/MAX/MAX_ULINT',MAX_ULINT);
+NodeFactory.AddNodeAsPrototype('Math/Selection/MAX/MAX_USINT',MAX_USINT);
+NodeFactory.AddNodeAsPrototype('Math/Selection/MAX/MAX_WORD',MAX_WORD);
+
+NodeFactory.AddNodeAsPrototype('Math/Selection/MIN/MIN_BYTE',MIN_BYTE);
+NodeFactory.AddNodeAsPrototype('Math/Selection/MIN/MIN_DINT',MIN_DINT);
+NodeFactory.AddNodeAsPrototype('Math/Selection/MIN/MIN_DWORD',MIN_DWORD);
+NodeFactory.AddNodeAsPrototype('Math/Selection/MIN/MIN_INT',MIN_INT);
+NodeFactory.AddNodeAsPrototype('Math/Selection/MIN/MIN_LINT',MIN_LINT);
+NodeFactory.AddNodeAsPrototype('Math/Selection/MIN/MIN_LREAL',MIN_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Selection/MIN/MIN_LWORD',MIN_LWORD);
+NodeFactory.AddNodeAsPrototype('Math/Selection/MIN/MIN_REAL',MIN_REAL);
+NodeFactory.AddNodeAsPrototype('Math/Selection/MIN/MIN_SINT',MIN_SINT);
+NodeFactory.AddNodeAsPrototype('Math/Selection/MIN/MIN_UDINT',MIN_UDINT);
+NodeFactory.AddNodeAsPrototype('Math/Selection/MIN/MIN_UINT',MIN_UINT);
+NodeFactory.AddNodeAsPrototype('Math/Selection/MIN/MIN_ULINT',MIN_ULINT);
+NodeFactory.AddNodeAsPrototype('Math/Selection/MIN/MIN_USINT',MIN_USINT);
+NodeFactory.AddNodeAsPrototype('Math/Selection/MIN/MIN_WORD',MIN_WORD);
+
+NodeFactory.AddNodeAsPrototype('Math/Selection/SEL/SEL_BYTE',SEL_BYTE);
+NodeFactory.AddNodeAsPrototype('Math/Selection/SEL/SEL_DINT',SEL_DINT);
+NodeFactory.AddNodeAsPrototype('Math/Selection/SEL/SEL_DWORD',SEL_DWORD);
+NodeFactory.AddNodeAsPrototype('Math/Selection/SEL/SEL_INT',SEL_INT);
+NodeFactory.AddNodeAsPrototype('Math/Selection/SEL/SEL_LINT',SEL_LINT);
+NodeFactory.AddNodeAsPrototype('Math/Selection/SEL/SEL_LREAL',SEL_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Selection/SEL/SEL_LWORD',SEL_LWORD);
+NodeFactory.AddNodeAsPrototype('Math/Selection/SEL/SEL_REAL',SEL_REAL);
+NodeFactory.AddNodeAsPrototype('Math/Selection/SEL/SEL_SINT',SEL_SINT);
+NodeFactory.AddNodeAsPrototype('Math/Selection/SEL/SEL_UDINT',SEL_UDINT);
+NodeFactory.AddNodeAsPrototype('Math/Selection/SEL/SEL_UINT',SEL_UINT);
+NodeFactory.AddNodeAsPrototype('Math/Selection/SEL/SEL_ULINT',SEL_ULINT);
+NodeFactory.AddNodeAsPrototype('Math/Selection/SEL/SEL_USINT',SEL_USINT);
+NodeFactory.AddNodeAsPrototype('Math/Selection/SEL/SEL_WORD',SEL_WORD);]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

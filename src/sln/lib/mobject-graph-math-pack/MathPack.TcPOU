@@ -10,6 +10,7 @@ VAR
 	mathLogicPack : MathLogicPack;
 	mathAdvancedPack : MathAdvancedPack;
 	mathComparisonPack : MathComparisonPack;
+	mathSelectionPack : MathSelectionPack;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -26,7 +27,8 @@ END_VAR
         <ST><![CDATA[mathCorePack.Register(Datatypes, NodeFactory);
 mathLogicPack.Register(Datatypes, NodeFactory);
 mathAdvancedPack.Register(Datatypes, NodeFactory);
-mathComparisonPack.Register(Datatypes, NodeFactory);]]></ST>
+mathComparisonPack.Register(Datatypes, NodeFactory);
+mathSelectionPack.Register(Datatypes, NodeFactory);]]></ST>
       </Implementation>
     </Method>
   </POU>
