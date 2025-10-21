@@ -9,7 +9,7 @@
     <WriteProductVersion>true</WriteProductVersion>
     <GenerateTpy>false</GenerateTpy>
     <Name>mobject_graph_math_pack</Name>
-    <ProgramVersion>3.1.4024.0</ProgramVersion>
+    <ProgramVersion>3.1.4026.19</ProgramVersion>
     <Application>{9d8977aa-9400-46c1-9192-b87aff945ed6}</Application>
     <TypeSystem>{9260ae87-256e-4ac7-bbc6-fedecc6d46b2}</TypeSystem>
     <Implicit_Task_Info>{598c322b-f7d4-4b61-a88c-f704b27c238a}</Implicit_Task_Info>
@@ -19,7 +19,7 @@
     <Company>mobject</Company>
     <Released>false</Released>
     <Title>mobject-graph-math-pack</Title>
-    <ProjectVersion>0.1.0</ProjectVersion>
+    <ProjectVersion>0.2.0</ProjectVersion>
     <DefaultNamespace>mobject-graph-math-pack</DefaultNamespace>
     <Placeholder>mobject-graph-math-pack</Placeholder>
     <Author>mobject dev team</Author>
@@ -36,10 +36,10 @@
     </SelectedLibraryCategories>
   </PropertyGroup>
   <ItemGroup>
-    <LibraryReference Include="mobject-core,0.7.0,mobject">
+    <LibraryReference Include="mobject-core,0.8.0,mobject">
       <Namespace>mobject_core</Namespace>
     </LibraryReference>
-    <LibraryReference Include="mobject-graph,0.16.0,mobject">
+    <LibraryReference Include="mobject-graph,0.17.0,mobject">
       <Namespace>mobject_graph</Namespace>
     </LibraryReference>
   </ItemGroup>
