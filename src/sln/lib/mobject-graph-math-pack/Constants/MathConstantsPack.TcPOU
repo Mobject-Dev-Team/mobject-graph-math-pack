@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.17">
+  <POU Name="MathConstantsPack" Id="{02ec9938-03a7-47c0-b6ad-ddcf4947bed8}" SpecialFunc="None">
+    <Declaration><![CDATA[{attribute 'linkalways'} 
+{attribute 'no_explicit_call' := 'This FB is a CLASS and must be accessed using methods or properties'}
+{attribute 'enable_dynamic_creation'}
+FUNCTION_BLOCK MathConstantsPack IMPLEMENTS I_GraphPack
+VAR
+	PI_LREAL : PI_LREAL;
+	PI05_LREAL : PI05_LREAL;
+	PI2_LREAL : PI2_LREAL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Register" Id="{d3e67c1a-326f-4c3b-a870-245c1f29b56f}">
+      <Declaration><![CDATA[METHOD Register
+VAR_INPUT
+	Datatypes : I_Datatypes;
+	NodeFactory : I_NodeFactory;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[NodeFactory.AddNodeAsPrototype('Math/Constants/PI/PI_LREAL',PI_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Constants/PI/PI05_LREAL',PI05_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Constants/PI/PI2_LREAL',PI2_LREAL);]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

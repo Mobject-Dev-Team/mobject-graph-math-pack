@@ -69,6 +69,7 @@
     <Folder Include="Advanced\Nodes" />
     <Folder Include="Advanced\Nodes\ABS" />
     <Folder Include="Advanced\Nodes\ATAN2" />
+    <Folder Include="Advanced\Nodes\RAD_TO_DEG" />
     <Folder Include="Advanced\Nodes\FLOOR" />
     <Folder Include="Advanced\Nodes\FRAC" />
     <Folder Include="Advanced\Nodes\MODABS" />
@@ -81,6 +82,7 @@
     <Folder Include="Advanced\Nodes\LN" />
     <Folder Include="Advanced\Nodes\EXP" />
     <Folder Include="Advanced\Nodes\EXPT" />
+    <Folder Include="Advanced\Nodes\DEG_TO_RAD" />
     <Folder Include="Advanced\Nodes\SQRT" />
     <Folder Include="Advanced\Nodes\TAN" />
     <Folder Include="Advanced\Nodes\SIN" />
@@ -92,6 +94,9 @@
     <Folder Include="Comparison\Nodes\LE" />
     <Folder Include="Comparison\Nodes\LT" />
     <Folder Include="Comparison\Nodes\NE" />
+    <Folder Include="Comparison\Nodes\AlmostEqual" />
+    <Folder Include="Constants\Nodes" />
+    <Folder Include="Constants\Nodes\PI" />
     <Folder Include="Core" />
     <Folder Include="Core\Nodes" />
     <Folder Include="Core\Nodes\ADD" />
@@ -107,6 +112,7 @@
     <Folder Include="Logic\Nodes\XOR" />
     <Folder Include="Advanced" />
     <Folder Include="Comparison" />
+    <Folder Include="Constants" />
     <Folder Include="Selection" />
     <Folder Include="Selection\Nodes" />
     <Folder Include="Selection\Nodes\MAX" />
@@ -168,6 +174,9 @@
     <Compile Include="Advanced\Nodes\ATAN2\ATAN2_LREAL.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Advanced\Nodes\RAD_TO_DEG\RAD_TO_DEG_LREAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Advanced\Nodes\COS\COS_LREAL.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -198,6 +207,9 @@
     <Compile Include="Advanced\Nodes\MODTURNS\MODTURNS_LREAL.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Advanced\Nodes\DEG_TO_RAD\DEG_TO_RAD_LREAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Advanced\Nodes\SIN\SIN_LREAL.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -211,6 +223,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Comparison\MathComparisonPack.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\AlmostEqual\AlmostEqual_LREAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\AlmostEqual\AlmostEqual_REAL.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Comparison\Nodes\EQ\EQ_BYTE.TcPOU">
@@ -463,6 +481,18 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Comparison\Nodes\NE\NE_WORD.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Constants\MathConstantsPack.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Constants\Nodes\PI\PI2_LREAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Constants\Nodes\PI\PI_LREAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Constants\Nodes\PI\PI05_LREAL.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Core\MathCorePack.TcPOU">

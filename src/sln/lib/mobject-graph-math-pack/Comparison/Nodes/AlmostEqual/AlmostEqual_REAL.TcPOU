@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.17">
+  <POU Name="AlmostEqual_REAL" Id="{aad6d72b-712d-4b0f-a481-6dd198430c64}" SpecialFunc="None">
+    <Declaration><![CDATA[{attribute 'linkalways'} 
+{attribute 'no_explicit_call' := 'This FB is a CLASS and must be accessed using methods or properties'}
+{attribute 'enable_dynamic_creation'}
+FUNCTION_BLOCK FINAL AlmostEqual_REAL EXTENDS Node
+VAR
+	in1 : _REAL(0.0);
+	in2 : _REAL(0.0);
+	absoluteEps : _REAL(1E-6);
+	relativeEps : _REAL(1E-6);
+	out : _BOOL(FALSE);
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Folder Name="Constructor" Id="{91620f16-4d84-42b7-9ba2-083da7d1c1e3}" />
+    <Method Name="Clone" Id="{147be50f-174f-4840-a899-209d7087a641}">
+      <Declaration><![CDATA[METHOD PUBLIC Clone : I_Node
+VAR
+	pNode : POINTER TO AlmostEqual_REAL;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[pNode := __NEW(AlmostEqual_REAL);
+Clone := pNode^;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="FB_init" Id="{5832f149-783a-4d28-9fe2-82b032162f19}" FolderPath="Constructor\">
+      <Declaration><![CDATA[METHOD FB_init : BOOL
+VAR_INPUT
+	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[AddInput('in1',THIS^.in1);
+AddInput('in2',THIS^.in2);
+AddParameter('absoluteEps', absoluteEps);
+AddParameter('relativeEps', relativeEps);
+AddOutput('out', THIS^.out);]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="OnExecute" Id="{7983e23c-61a0-4a2b-8d5a-37cbd58dde24}">
+      <Declaration><![CDATA[METHOD PROTECTED OnExecute
+VAR
+	a : REAL;
+    b : REAL;
+	difference : REAL;
+	scale : REAL;
+	absEps : REAL;
+	relEps : REAL;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[a := in1.Value;
+b := in2.Value;
+
+// nan protection
+IF NOT (a = a AND b = b) THEN
+    out.Value := FALSE; 
+ELSE
+	difference  := ABS(a - b);
+	scale := MAX(ABS(a), ABS(b));
+	absEps := ABS(absoluteEps.Value);
+	relEps := ABS(relativeEps.Value);
+	out.Value := difference <= MAX(absEps, relEps * scale);
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

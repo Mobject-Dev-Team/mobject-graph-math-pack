@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.17">
+  <POU Name="PI05_LREAL" Id="{fac56c12-a81b-4686-99b5-487005efb07b}" SpecialFunc="None">
+    <Declaration><![CDATA[{attribute 'linkalways'} 
+{attribute 'no_explicit_call' := 'This FB is a CLASS and must be accessed using methods or properties'}
+{attribute 'enable_dynamic_creation'}
+FUNCTION_BLOCK FINAL PI05_LREAL EXTENDS Node
+VAR CONSTANT 
+	pi0_5 : LREAL := Tc2_system.PI / 2;
+END_VAR
+VAR
+	pi : _LREAL(pi0_5);
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Folder Name="Constructor" Id="{96fc16f8-1ea5-452b-8e25-8eff3f48a45c}" />
+    <Method Name="Clone" Id="{f343c8b7-295f-4aa8-b575-6572a0d4e902}">
+      <Declaration><![CDATA[METHOD PUBLIC Clone : I_Node
+VAR
+	pNode : POINTER TO PI05_LREAL;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[pNode := __NEW(PI05_LREAL);
+Clone := pNode^;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="FB_init" Id="{652befcf-d5e8-429a-8485-e4b7ae5950fe}" FolderPath="Constructor\">
+      <Declaration><![CDATA[METHOD FB_init : BOOL
+VAR_INPUT
+	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[AddOutput('pi', THIS^.pi);]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="OnExecute" Id="{26522033-f6ea-49b2-a9f6-54083d67e183}">
+      <Declaration><![CDATA[METHOD PROTECTED OnExecute
+VAR
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[pi.Value := pi0_5;]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>
