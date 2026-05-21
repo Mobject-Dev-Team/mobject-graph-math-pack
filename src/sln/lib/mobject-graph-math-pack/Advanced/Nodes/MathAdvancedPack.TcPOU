@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.17">
   <POU Name="MathAdvancedPack" Id="{af36170e-5162-4f44-b731-3e1f9f4595c6}" SpecialFunc="None">
     <Declaration><![CDATA[{attribute 'linkalways'} 
 {attribute 'no_explicit_call' := 'This FB is a CLASS and must be accessed using methods or properties'}
@@ -24,6 +24,7 @@ VAR
 	ACOS_LREAL : ACOS_LREAL;
 	ASIN_LREAL : ASIN_LREAL;
 	ATAN_LREAL : ATAN_LREAL;
+	ATAN2_LREAL : ATAN2_LREAL;
 	COS_LREAL : COS_LREAL;
 	SIN_LREAL : SIN_LREAL;
 	TAN_LREAL : TAN_LREAL;
@@ -37,6 +38,9 @@ VAR
 	SQRT_LREAL : SQRT_LREAL;
 	TRUNC_LREAL : TRUNC_LREAL;
 	MODABS_LREAL : MODABS_LREAL;
+	
+	DEG_TO_RAD_LREAL : DEG_TO_RAD_LREAL;
+	RAD_TO_DEG_LREAL : RAD_TO_DEG_LREAL;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -68,6 +72,7 @@ NodeFactory.AddNodeAsPrototype('Math/Advanced/ABS/ABS_WORD',ABS_WORD);
 NodeFactory.AddNodeAsPrototype('Math/Advanced/ACOS/ACOS_LREAL',ACOS_LREAL);
 NodeFactory.AddNodeAsPrototype('Math/Advanced/ASIN/ASIN_LREAL',ASIN_LREAL);
 NodeFactory.AddNodeAsPrototype('Math/Advanced/ATAN/ATAN_LREAL',ATAN_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Advanced/ATAN2/ATAN2_LREAL',ATAN2_LREAL);
 NodeFactory.AddNodeAsPrototype('Math/Advanced/COS/COS_LREAL',COS_LREAL);
 NodeFactory.AddNodeAsPrototype('Math/Advanced/SIN/SIN_LREAL',SIN_LREAL);
 NodeFactory.AddNodeAsPrototype('Math/Advanced/TAN/TAN_LREAL',TAN_LREAL);
@@ -80,7 +85,10 @@ NodeFactory.AddNodeAsPrototype('Math/Advanced/LN/LN_LREAL',LN_LREAL);
 NodeFactory.AddNodeAsPrototype('Math/Advanced/LOG/LOG_LREAL',LOG_LREAL);
 NodeFactory.AddNodeAsPrototype('Math/Advanced/SQRT/SQRT_LREAL',SQRT_LREAL);
 NodeFactory.AddNodeAsPrototype('Math/Advanced/TRUNC/TRUNC_LREAL',TRUNC_LREAL);
-NodeFactory.AddNodeAsPrototype('Math/Advanced/MODABS/MODABS_LREAL',MODABS_LREAL);]]></ST>
+NodeFactory.AddNodeAsPrototype('Math/Advanced/MODABS/MODABS_LREAL',MODABS_LREAL);
+
+NodeFactory.AddNodeAsPrototype('Math/Advanced/DEG_TO_RAD/DEG_TO_RAD_LREAL',DEG_TO_RAD_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Advanced/RAD_TO_DEG_LREAL/RAD_TO_DEG_LREAL',RAD_TO_DEG_LREAL);]]></ST>
       </Implementation>
     </Method>
   </POU>

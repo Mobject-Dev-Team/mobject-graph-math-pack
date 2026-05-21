@@ -9,7 +9,7 @@
     <WriteProductVersion>true</WriteProductVersion>
     <GenerateTpy>false</GenerateTpy>
     <Name>mobject_graph_math_pack</Name>
-    <ProgramVersion>3.1.4024.0</ProgramVersion>
+    <ProgramVersion>3.1.4026.22</ProgramVersion>
     <Application>{9d8977aa-9400-46c1-9192-b87aff945ed6}</Application>
     <TypeSystem>{9260ae87-256e-4ac7-bbc6-fedecc6d46b2}</TypeSystem>
     <Implicit_Task_Info>{598c322b-f7d4-4b61-a88c-f704b27c238a}</Implicit_Task_Info>
@@ -19,7 +19,7 @@
     <Company>mobject</Company>
     <Released>false</Released>
     <Title>mobject-graph-math-pack</Title>
-    <ProjectVersion>0.1.0</ProjectVersion>
+    <ProjectVersion>0.2.0</ProjectVersion>
     <DefaultNamespace>mobject-graph-math-pack</DefaultNamespace>
     <Placeholder>mobject-graph-math-pack</Placeholder>
     <Author>mobject dev team</Author>
@@ -36,10 +36,10 @@
     </SelectedLibraryCategories>
   </PropertyGroup>
   <ItemGroup>
-    <LibraryReference Include="mobject-core,0.7.0,mobject">
+    <LibraryReference Include="mobject-core,0.9.0,mobject">
       <Namespace>mobject_core</Namespace>
     </LibraryReference>
-    <LibraryReference Include="mobject-graph,0.16.0,mobject">
+    <LibraryReference Include="mobject-graph,0.17.0,mobject">
       <Namespace>mobject_graph</Namespace>
     </LibraryReference>
   </ItemGroup>
@@ -68,6 +68,8 @@
   <ItemGroup>
     <Folder Include="Advanced\Nodes" />
     <Folder Include="Advanced\Nodes\ABS" />
+    <Folder Include="Advanced\Nodes\ATAN2" />
+    <Folder Include="Advanced\Nodes\RAD_TO_DEG" />
     <Folder Include="Advanced\Nodes\FLOOR" />
     <Folder Include="Advanced\Nodes\FRAC" />
     <Folder Include="Advanced\Nodes\MODABS" />
@@ -80,6 +82,7 @@
     <Folder Include="Advanced\Nodes\LN" />
     <Folder Include="Advanced\Nodes\EXP" />
     <Folder Include="Advanced\Nodes\EXPT" />
+    <Folder Include="Advanced\Nodes\DEG_TO_RAD" />
     <Folder Include="Advanced\Nodes\SQRT" />
     <Folder Include="Advanced\Nodes\TAN" />
     <Folder Include="Advanced\Nodes\SIN" />
@@ -91,6 +94,9 @@
     <Folder Include="Comparison\Nodes\LE" />
     <Folder Include="Comparison\Nodes\LT" />
     <Folder Include="Comparison\Nodes\NE" />
+    <Folder Include="Comparison\Nodes\AlmostEqual" />
+    <Folder Include="Constants\Nodes" />
+    <Folder Include="Constants\Nodes\PI" />
     <Folder Include="Core" />
     <Folder Include="Core\Nodes" />
     <Folder Include="Core\Nodes\ADD" />
@@ -106,6 +112,7 @@
     <Folder Include="Logic\Nodes\XOR" />
     <Folder Include="Advanced" />
     <Folder Include="Comparison" />
+    <Folder Include="Constants" />
     <Folder Include="Selection" />
     <Folder Include="Selection\Nodes" />
     <Folder Include="Selection\Nodes\MAX" />
@@ -164,6 +171,12 @@
     <Compile Include="Advanced\Nodes\ATAN\ATAN_LREAL.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Advanced\Nodes\ATAN2\ATAN2_LREAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Advanced\Nodes\RAD_TO_DEG\RAD_TO_DEG_LREAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Advanced\Nodes\COS\COS_LREAL.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -194,6 +207,9 @@
     <Compile Include="Advanced\Nodes\MODTURNS\MODTURNS_LREAL.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Advanced\Nodes\DEG_TO_RAD\DEG_TO_RAD_LREAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Advanced\Nodes\SIN\SIN_LREAL.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -207,6 +223,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Comparison\MathComparisonPack.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\AlmostEqual\AlmostEqual_LREAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comparison\Nodes\AlmostEqual\AlmostEqual_REAL.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Comparison\Nodes\EQ\EQ_BYTE.TcPOU">
@@ -459,6 +481,18 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Comparison\Nodes\NE\NE_WORD.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Constants\MathConstantsPack.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Constants\Nodes\PI\PI2_LREAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Constants\Nodes\PI\PI_LREAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Constants\Nodes\PI\PI05_LREAL.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Core\MathCorePack.TcPOU">
@@ -981,10 +1015,22 @@
           <d n="SubKeys" t="Hashtable" />
           <d n="Values" t="Hashtable" />
         </o>
+        <v>{246001F4-279D-43AC-B241-948EB31120E1}</v>
+        <o>
+          <v n="Name">"{246001F4-279D-43AC-B241-948EB31120E1}"</v>
+          <d n="SubKeys" t="Hashtable" />
+          <d n="Values" t="Hashtable" />
+        </o>
         <v>{29BD8D0C-3586-4548-BB48-497B9A01693F}</v>
         <o>
           <v n="Name">"{29BD8D0C-3586-4548-BB48-497B9A01693F}"</v>
           <d n="SubKeys" t="Hashtable" ckt="String" cvt="OptionKey">
+            <v>NamingConventions</v>
+            <o>
+              <v n="Name">"NamingConventions"</v>
+              <d n="SubKeys" t="Hashtable" />
+              <d n="Values" t="Hashtable" />
+            </o>
             <v>Rules</v>
             <o>
               <v n="Name">"Rules"</v>
@@ -1003,11 +1049,36 @@
             <v>IR0whWr8bwfwBwAAiD2qpQAAAABVAgAA37x72QAAAAABAAAAAAAAAAEaUwB5AHMAdABlAG0ALgBTAHQAcgBpAG4AZwACTHsAZgA5ADUAYgBiADQAMgA2AC0ANQA1ADIANAAtADQAYgA0ADUALQA5ADQAMAAwAC0AZgBiADAAZgAyAGUANwA3AGUANQAxAGIAfQADCE4AYQBtAGUABDBUAHcAaQBuAEMAQQBUACAAMwAuADEAIABCAHUAaQBsAGQAIAA0ADAAMgA0AC4ANwAFFlAAcgBvAGYAaQBsAGUARABhAHQAYQAGTHsAMQA2AGUANQA1AGIANgAwAC0ANwAwADQAMwAtADQAYQA2ADMALQBiADYANQBiAC0ANgAxADQANwAxADMAOAA3ADgAZAA0ADIAfQAHEkwAaQBiAHIAYQByAGkAZQBzAAhMewAzAGIAZgBkADUANAA1ADkALQBiADAANwBmAC0ANABkADYAZQAtAGEAZQAxAGEALQBhADgAMwAzADUANgBhADUANQAxADQAMgB9AAlMewA5AGMAOQA1ADgAOQA2ADgALQAyAGMAOAA1AC0ANAAxAGIAYgAtADgAOAA3ADEALQA4ADkANQBmAGYAMQBmAGUAZABlADEAYQB9AAoOVgBlAHIAcwBpAG8AbgALBmkAbgB0AAwKVQBzAGEAZwBlAA0KVABpAHQAbABlAA4aVgBpAHMAdQBFAGwAZQBtAE0AZQB0AGUAcgAPDkMAbwBtAHAAYQBuAHkAEAxTAHkAcwB0AGUAbQARElYAaQBzAHUARQBsAGUAbQBzABIwVgBpAHMAdQBFAGwAZQBtAHMAUwBwAGUAYwBpAGEAbABDAG8AbgB0AHIAbwBsAHMAEyhWAGkAcwB1AEUAbABlAG0AcwBXAGkAbgBDAG8AbgB0AHIAbwBsAHMAFCRWAGkAcwB1AEUAbABlAG0AVABlAHgAdABFAGQAaQB0AG8AcgAVIlYAaQBzAHUATgBhAHQAaQB2AGUAQwBvAG4AdAByAG8AbAAWFHYAaQBzAHUAaQBuAHAAdQB0AHMAFwxzAHkAcwB0AGUAbQAYGFYAaQBzAHUARQBsAGUAbQBCAGEAcwBlABkmRABlAHYAUABsAGEAYwBlAGgAbwBsAGQAZQByAHMAVQBzAGUAZAAaCGIAbwBvAGwAGyJQAGwAdQBnAGkAbgBDAG8AbgBzAHQAcgBhAGkAbgB0AHMAHEx7ADQAMwBkADUAMgBiAGMAZQAtADkANAAyAGMALQA0ADQAZAA3AC0AOQBlADkANAAtADEAYgBmAGQAZgAzADEAMABlADYAMwBjAH0AHRxBAHQATABlAGEAcwB0AFYAZQByAHMAaQBvAG4AHhRQAGwAdQBnAGkAbgBHAHUAaQBkAB8WUwB5AHMAdABlAG0ALgBHAHUAaQBkACBIYQBmAGMAZAA1ADQANAA2AC0ANAA5ADEANAAtADQAZgBlADcALQBiAGIANwA4AC0AOQBiAGYAZgBlAGIANwAwAGYAZAAxADcAIRRVAHAAZABhAHQAZQBJAG4AZgBvACJMewBiADAAMwAzADYANgBhADgALQBiADUAYwAwAC0ANABiADkAYQAtAGEAMAAwAGUALQBlAGIAOAA2ADAAMQAxADEAMAA0AGMAMwB9ACMOVQBwAGQAYQB0AGUAcwAkTHsAMQA4ADYAOABmAGYAYwA5AC0AZQA0AGYAYwAtADQANQAzADIALQBhAGMAMAA2AC0AMQBlADMAOQBiAGIANQA1ADcAYgA2ADkAfQAlTHsAYQA1AGIAZAA0ADgAYwAzAC0AMABkADEANwAtADQAMQBiADUALQBiADEANgA0AC0ANQBmAGMANgBhAGQAMgBiADkANgBiADcAfQAmFk8AYgBqAGUAYwB0AHMAVAB5AHAAZQAnVFUAcABkAGEAdABlAEwAYQBuAGcAdQBhAGcAZQBNAG8AZABlAGwARgBvAHIAQwBvAG4AdgBlAHIAdABpAGIAbABlAEwAaQBiAHIAYQByAGkAZQBzACgQTABpAGIAVABpAHQAbABlACkUTABpAGIAQwBvAG0AcABhAG4AeQAqHlUAcABkAGEAdABlAFAAcgBvAHYAaQBkAGUAcgBzACs4UwB5AHMAdABlAG0ALgBDAG8AbABsAGUAYwB0AGkAbwBuAHMALgBIAGEAcwBoAHQAYQBiAGwAZQAsEnYAaQBzAHUAZQBsAGUAbQBzAC1INgBjAGIAMQBjAGQAZQAxAC0AZAA1AGQAYwAtADQAYQAzAGIALQA5ADAANQA0AC0AMgAxAGYAYQA3ADUANgBhADMAZgBhADQALihJAG4AdABlAHIAZgBhAGMAZQBWAGUAcgBzAGkAbwBuAEkAbgBmAG8AL0x7AGMANgAxADEAZQA0ADAAMAAtADcAZgBiADkALQA0AGMAMwA1AC0AYgA5AGEAYwAtADQAZQAzADEANABiADUAOQA5ADYANAAzAH0AMBhNAGEAagBvAHIAVgBlAHIAcwBpAG8AbgAxGE0AaQBuAG8AcgBWAGUAcgBzAGkAbwBuADIMTABlAGcAYQBjAHkAMzBMAGEAbgBnAHUAYQBnAGUATQBvAGQAZQBsAFYAZQByAHMAaQBvAG4ASQBuAGYAbwA0MEwAbwBhAGQATABpAGIAcgBhAHIAaQBlAHMASQBuAHQAbwBQAHIAbwBqAGUAYwB0ADUaQwBvAG0AcABhAHQAaQBiAGkAbABpAHQAeQDQAAIaA9ADAS0E0AUGGgfQBwgaAUUHCQjQAAkaBEUKCwQDAAAABQAAAA0AAAAAAAAA0AwLrQIAAADQDQEtDtAPAS0Q0AAJGgRFCgsEAwAAAAUAAAANAAAAKAAAANAMC60BAAAA0A0BLRHQDwEtENAACRoERQoLBAMAAAAFAAAADQAAAAAAAADQDAutAgAAANANAS0S0A8BLRDQAAkaBEUKCwQDAAAABQAAAA0AAAAUAAAA0AwLrQIAAADQDQEtE9APAS0Q0AAJGgRFCgsEAwAAAAUAAAANAAAAAAAAANAMC60CAAAA0A0BLRTQDwEtENAACRoERQoLBAMAAAAFAAAADQAAAAAAAADQDAutAgAAANANAS0V0A8BLRDQAAkaBEUKCwQDAAAABQAAAA0AAAAAAAAA0AwLrQIAAADQDQEtFtAPAS0X0AAJGgRFCgsEAwAAAAUAAAANAAAAKAAAANAMC60EAAAA0A0BLRjQDwEtENAZGq0BRRscAdAAHBoCRR0LBAMAAAAFAAAADQAAAAAAAADQHh8tINAhIhoCRSMkAtAAJRoFRQoLBAMAAAADAAAAAAAAAAoAAADQJgutAAAAANADAS0n0CgBLRHQKQEtENAAJRoFRQoLBAMAAAADAAAAAAAAAAoAAADQJgutAQAAANADAS0n0CgBLRHQKQEtEJoqKwFFAAEC0AABLSzQAAEtF9AAHy0t0C4vGgPQMAutAQAAANAxC60XAAAA0DIarQDQMy8aA9AwC60CAAAA0DELrQMAAADQMhqtANA0Gq0A0DUarQA=</v>
           </d>
         </o>
+        <v>{8A0FB252-96EB-4DCC-A5B4-B4804D05E2D6}</v>
+        <o>
+          <v n="Name">"{8A0FB252-96EB-4DCC-A5B4-B4804D05E2D6}"</v>
+          <d n="SubKeys" t="Hashtable" />
+          <d n="Values" t="Hashtable" ckt="String" cvt="Boolean">
+            <v>WriteLineIDs</v>
+            <v>True</v>
+          </d>
+        </o>
+        <v>{8F99A816-E488-41E4-9FA3-846536012284}</v>
+        <o>
+          <v n="Name">"{8F99A816-E488-41E4-9FA3-846536012284}"</v>
+          <d n="SubKeys" t="Hashtable" />
+          <d n="Values" t="Hashtable" ckt="String" cvt="String">
+            <v>DisabledWarningIds</v>
+            <v>394,5410</v>
+          </d>
+        </o>
+        <v>{eeeeeeee-3909-4298-8022-501ac3238667}</v>
+        <o>
+          <v n="Name">"{eeeeeeee-3909-4298-8022-501ac3238667}"</v>
+          <d n="SubKeys" t="Hashtable" />
+          <d n="Values" t="Hashtable" />
+        </o>
       </d>
       <d n="Values" t="Hashtable" />
     </o>
         </Data>
         <TypeList>
+          <Type n="Boolean">System.Boolean</Type>
           <Type n="Hashtable">System.Collections.Hashtable</Type>
           <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
           <Type n="String">System.String</Type>

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.17">
+  <POU Name="ATAN2_LREAL" Id="{29df1226-1c8a-4d62-ba3a-50a5b10bc5f2}" SpecialFunc="None">
+    <Declaration><![CDATA[{attribute 'linkalways'} 
+{attribute 'no_explicit_call' := 'This FB is a CLASS and must be accessed using methods or properties'}
+{attribute 'enable_dynamic_creation'}
+FUNCTION_BLOCK FINAL ATAN2_LREAL EXTENDS Node
+VAR
+	y : _LREAL(0.0);
+	x : _LREAL(0.0);
+	out : _LREAL(0.0);
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Folder Name="Constructor" Id="{5aae6d9b-b426-495e-b29c-8039990dab0e}" />
+    <Method Name="Clone" Id="{bf157f09-85a6-470b-84ad-74b6661b8e5b}">
+      <Declaration><![CDATA[METHOD PUBLIC Clone : I_Node
+VAR
+	pNode : POINTER TO ATAN2_LREAL;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[pNode := __NEW(ATAN2_LREAL);
+Clone := pNode^;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="FB_init" Id="{909f01a6-ed1c-423c-ab84-4edf1657bc6c}" FolderPath="Constructor\">
+      <Declaration><![CDATA[METHOD FB_init : BOOL
+VAR_INPUT
+	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[AddInput('y',THIS^.y);
+AddInput('x',THIS^.x);
+AddOutput('out', THIS^.out);]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="OnExecute" Id="{ff87e047-ede3-4f2b-9037-ffc9ab3d7195}">
+      <Declaration><![CDATA[METHOD PROTECTED OnExecute
+VAR
+	_x : LREAL;
+	_y : LREAL;
+	angle : LREAL;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[_x := x.Value;
+_y := y.Value;
+
+IF _x > 0.0 THEN
+	out.Value := ATAN(_y/_x);
+ELSIF _x < 0.0 THEN
+	IF _y >=0.0 THEN
+		out.Value := ATAN(_y/_x) + PI;
+	ELSE
+		out.Value := ATAN(_y/_x) - PI;
+	END_IF;
+ELSIF _y > 0.0 THEN
+	out.Value := PI / 2;
+ELSIF _y < 0.0 THEN
+	out.Value := -PI / 2;
+ELSE
+	out.Value := 0.0;
+END_IF;]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

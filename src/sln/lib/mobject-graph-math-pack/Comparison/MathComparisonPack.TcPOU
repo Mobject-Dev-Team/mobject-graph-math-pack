@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.17">
   <POU Name="MathComparisonPack" Id="{7c62dd03-e791-4ab0-9386-56a6d55e2659}" SpecialFunc="None">
     <Declaration><![CDATA[{attribute 'linkalways'} 
 {attribute 'no_explicit_call' := 'This FB is a CLASS and must be accessed using methods or properties'}
@@ -95,6 +95,9 @@ VAR
 	GE_ULINT : GE_ULINT;
 	GE_USINT : GE_USINT;
 	GE_WORD : GE_WORD;
+	
+	AlmostEqual_LREAL : AlmostEqual_LREAL;
+	AlmostEqual_REAL : AlmostEqual_REAL;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -196,7 +199,10 @@ NodeFactory.AddNodeAsPrototype('Math/Comparison/GE/GE_UDINT',GE_UDINT);
 NodeFactory.AddNodeAsPrototype('Math/Comparison/GE/GE_UINT',GE_UINT);
 NodeFactory.AddNodeAsPrototype('Math/Comparison/GE/GE_ULINT',GE_ULINT);
 NodeFactory.AddNodeAsPrototype('Math/Comparison/GE/GE_USINT',GE_USINT);
-NodeFactory.AddNodeAsPrototype('Math/Comparison/GE/GE_WORD',GE_WORD);]]></ST>
+NodeFactory.AddNodeAsPrototype('Math/Comparison/GE/GE_WORD',GE_WORD);
+
+NodeFactory.AddNodeAsPrototype('Math/Comparison/AlmostEqual/AlmostEqual_LREAL',AlmostEqual_LREAL);
+NodeFactory.AddNodeAsPrototype('Math/Comparison/AlmostEqual/AlmostEqual_REAL',AlmostEqual_REAL);]]></ST>
       </Implementation>
     </Method>
   </POU>
