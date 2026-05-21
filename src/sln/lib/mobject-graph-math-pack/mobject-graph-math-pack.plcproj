@@ -9,7 +9,7 @@
     <WriteProductVersion>true</WriteProductVersion>
     <GenerateTpy>false</GenerateTpy>
     <Name>mobject_graph_math_pack</Name>
-    <ProgramVersion>3.1.4026.20</ProgramVersion>
+    <ProgramVersion>3.1.4026.22</ProgramVersion>
     <Application>{9d8977aa-9400-46c1-9192-b87aff945ed6}</Application>
     <TypeSystem>{9260ae87-256e-4ac7-bbc6-fedecc6d46b2}</TypeSystem>
     <Implicit_Task_Info>{598c322b-f7d4-4b61-a88c-f704b27c238a}</Implicit_Task_Info>
@@ -36,7 +36,7 @@
     </SelectedLibraryCategories>
   </PropertyGroup>
   <ItemGroup>
-    <LibraryReference Include="mobject-core,0.8.0,mobject">
+    <LibraryReference Include="mobject-core,0.9.0,mobject">
       <Namespace>mobject_core</Namespace>
     </LibraryReference>
     <LibraryReference Include="mobject-graph,0.17.0,mobject">
@@ -1005,8 +1005,8 @@
   <ProjectExtensions>
     <PlcProjectOptions>
       <XmlArchive>
-  <Data>
-    <o xml:space="preserve" t="OptionKey">
+        <Data>
+          <o xml:space="preserve" t="OptionKey">
       <v n="Name">"&lt;ProjectRoot&gt;"</v>
       <d n="SubKeys" t="Hashtable" ckt="String" cvt="OptionKey">
         <v>{192FAD59-8248-4824-A8DE-9177C94C195A}</v>
@@ -1076,14 +1076,14 @@
       </d>
       <d n="Values" t="Hashtable" />
     </o>
-  </Data>
-  <TypeList>
-    <Type n="Boolean">System.Boolean</Type>
-    <Type n="Hashtable">System.Collections.Hashtable</Type>
-    <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
-    <Type n="String">System.String</Type>
-  </TypeList>
-</XmlArchive>
+        </Data>
+        <TypeList>
+          <Type n="Boolean">System.Boolean</Type>
+          <Type n="Hashtable">System.Collections.Hashtable</Type>
+          <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
+          <Type n="String">System.String</Type>
+        </TypeList>
+      </XmlArchive>
     </PlcProjectOptions>
   </ProjectExtensions>
 </Project>
