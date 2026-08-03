@@ -19,7 +19,7 @@
     <Company>mobject</Company>
     <Released>false</Released>
     <Title>mobject-graph-math-pack</Title>
-    <ProjectVersion>0.2.0</ProjectVersion>
+    <ProjectVersion>0.3.0</ProjectVersion>
     <DefaultNamespace>mobject-graph-math-pack</DefaultNamespace>
     <Placeholder>mobject-graph-math-pack</Placeholder>
     <Author>mobject dev team</Author>
@@ -36,10 +36,10 @@
     </SelectedLibraryCategories>
   </PropertyGroup>
   <ItemGroup>
-    <LibraryReference Include="mobject-core,0.9.0,mobject">
+    <LibraryReference Include="mobject-core,0.10.0,mobject">
       <Namespace>mobject_core</Namespace>
     </LibraryReference>
-    <LibraryReference Include="mobject-graph,0.17.0,mobject">
+    <LibraryReference Include="mobject-graph,0.18.0,mobject">
       <Namespace>mobject_graph</Namespace>
     </LibraryReference>
   </ItemGroup>
